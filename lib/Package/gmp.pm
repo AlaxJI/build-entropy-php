@@ -17,7 +17,7 @@ sub init {
 
 
 sub base_url {
-	return "http://mirror.switch.ch/ftp/mirror/gnu/gmp"
+	return "https://ftp.gnu.org/gnu/gmp"
 }
 
 sub packagename {

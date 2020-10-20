@@ -1,4 +1,4 @@
-package Package::APC;
+package Package::apc;
 
 use strict;
 use warnings;

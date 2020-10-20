@@ -8,7 +8,7 @@ use base qw(Package);
 our $VERSION = '1.2.51';
 
 sub base_url {
-	return "http://downloads.sourceforge.net/project/libpng/libpng12/$VERSION";
+	return "https://master.dl.sourceforge.net/project/libpng/libpng12/older-releases/1.2.51/";
 }
 
 sub packagename {

@@ -1,17 +1,14 @@
-# how to build new packages and upload to php-osx.liip.ch
+# how to build new packages
 
 The best thing is to have virtual machines with OS X 10.6 and OS X 10.8 with just the needed tools installed. This is mainly XCode from the AppStore, but additionally I installed homebrew with the following packages:
 
-    autoconf        automake        bash-completion git             rpl             wget
+    autoconf        automake        bash-completion git             rpl             wget            httpd2
 
 (If you're at Liip ask chregu for the images)
 
 Then checkout
 
     git clone git@github.com:liip/build-entropy-php.git
-and
-
-    git clone git@github.com:liip/php-osx.git
 
 preferably in the same parent directory.
 

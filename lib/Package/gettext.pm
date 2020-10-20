@@ -16,7 +16,7 @@ sub dependency_names {
 
 
 sub base_url {
-	return "ftp://sunsite.cnlab-switch.ch/mirror/gnu/gettext";
+	return "https://ftp.gnu.org/gnu/gettext";
 }
 
 
@@ -43,7 +43,7 @@ sub php_extension_configure_flags {
 }
 
 
-#CFLAGS='-arch i386 -arch x86_64' LDFLAGS='-arch i386 -arch x86_64' CC='cc -DENTROPY_CH_RELEASE=2' ./configure --with-libiconv-prefix=/usr/local/php5 --without-emacs --disable-java --disable-native-java --disable-dependency-tracking --prefix=/usr/local/php5
+#CFLAGS='-arch i386 -arch x86_64' LDFLAGS='-arch i386 -arch x86_64' CC='cc -DENTROPY_CH_RELEASE=2' ./configure --with-libiconv-prefix=/usr/local/php7.3.8 --without-emacs --disable-java --disable-native-java --disable-dependency-tracking --prefix=/usr/local/php7.3.8
 
 sub configure_flags {
 	my $self = shift @_;

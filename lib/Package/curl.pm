@@ -5,7 +5,7 @@ use warnings;
 
 use base qw(Package);
 
-our $VERSION = '7.54.0';
+our $VERSION = '7.56.0';
 
 sub base_url {
 	return "http://curl.haxx.se/download";
@@ -25,8 +25,8 @@ sub configure_flags {
 		$self->SUPER::configure_flags(@_),
 		'--enable-ldaps',
 		'--disable-dependency-tracking',
-		'--with-ssl=/usr/local/php5',
-		'--with-ca-bundle=/usr/local/php5/ssl/cert.pem',
+		'--with-ssl=/usr/local/php7.3.8',
+		'--with-ca-bundle=/usr/local/php7.3.8/ssl/cert.pem',
 		'--with-libidn='.$self->config()->prefix(),
 		'--disable-ares',
                 '--with-gssapi'

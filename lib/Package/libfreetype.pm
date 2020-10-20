@@ -10,7 +10,7 @@ our $VERSION = '2.3.11';
 
 
 sub base_url {
-	return "http://switch.dl.sourceforge.net/sourceforge/freetype";
+	return "https://master.dl.sourceforge.net/project/freetype/freetype2/$VERSION";
 }
 
 

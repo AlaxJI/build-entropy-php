@@ -22,9 +22,9 @@ rm -rf download/master.tar.gz
 
 rm ~/.pearrc 
 
-rm /usr/local/php5/libphp5.so
-rm /usr/local/php5/libphp7.so
-rm -rf /usr/local/php5/lib/php
-rm -rf /usr/local/php5/php.d/
-rm -rf /usr/local/php5/bin/php*
+#rm /usr/local/php5/libphp5.so
+rm /usr/local/php7.3.8/libphp7.so
+rm -rf /usr/local/php7.3.8/lib/php
+rm -rf /usr/local/php7.3.8/php.d/
+rm -rf /usr/local/php7.3.8/bin/php*
 

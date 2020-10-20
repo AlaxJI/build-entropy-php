@@ -13,7 +13,7 @@ our $VERSION = '2007f';
 
 
 sub base_url {
-	return "ftp://ftp.cac.washington.edu/imap";
+	return "https://www.mirrorservice.org/sites/ftp.cac.washington.edu/imap";
 }
 
 
@@ -44,7 +44,9 @@ sub package_filelist {
 sub make_command {
 	my $self = shift @_;
 	my $cflags = $self->cflags();
-	return qq(MACOSX_DEPLOYMENT_TARGET=10.10 EXTRACFLAGS="$cflags" make -e osx);
+	my $ldflags = $self->ldflags();
+	my $prefix = $self->config()->prefix();
+	return qq(MACOSX_DEPLOYMENT_TARGET=10.10 EXTRACFLAGS="$cflags  $ldflags -I$prefix/include/openssl" make -e osx);
 }
 
 
@@ -67,7 +69,7 @@ sub php_extension_configure_flags {
 	my $self = shift @_;
 	my (%args) = @_;
 	my $packagename = $self->packagename();
-	return "--with-imap=shared,../$packagename --with-kerberos=/usr --with-imap-ssl=/usr/local/php5";
+	return "--with-imap=shared,../$packagename --with-kerberos=/usr --with-imap-ssl=/usr/local/php7.3.8";
 }
 
 

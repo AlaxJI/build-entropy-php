@@ -16,7 +16,7 @@ sub init {
 
 
 sub base_url {
-	return "http://mirror.switch.ch/ftp/mirror/gnu/readline"
+	return "https://ftp.gnu.org/gnu/readline"
 }
 
 sub packagename {

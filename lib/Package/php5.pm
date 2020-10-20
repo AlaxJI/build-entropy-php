@@ -49,7 +49,7 @@ sub packagesrcdir {
 }
 
 sub dependency_names {
-	 return qw(      openssl icu          libxslt imapcclient gettext curl libpng libjpeg libtiff libgif libfreetype postgresql libmcrypt  tidy gmp readline libiodbc libsodium);
+	 return qw(iconv openssl icu          libxslt imapcclient gettext curl libpng libjpeg libtiff libgif libfreetype postgresql libmcrypt  tidy gmp readline libiodbc libsodium);
 	#before 10.8
 	#return qw(iconv icu mssql libxml2 libxslt imapcclient gettext curl libpng libjpeg libtiff libgif libfreetype postgresql mcrypt tidy);
 }
@@ -72,13 +72,14 @@ sub configure_flags {
 	my $self = shift @_;
 	my %args = @_;
 	my $prefix = $self->config()->prefix();
+	my $basedir = $self->config()->basedir();
 
 	my @extension_flags = (
 		"--with-config-file-scan-dir=$prefix/php.d",
 		'--with-libxml-dir=shared,/usr',
-		'--with-openssl=/usr/local/php5',
-		'--with-zlib=/usr',
-		'--with-zlib-dir=/usr',
+		"--with-openssl=$prefix",
+		"--with-zlib=/usr/local/opt/zlib",
+		"--with-zlib-dir=/usr/local/opt/zlib",
 		'--with-gd',
                 '--without-libzip',
 #		'--with-ldap',
@@ -90,7 +91,7 @@ sub configure_flags {
 		'--enable-ftp',
 		'--with-iodbc',
 		'--enable-sockets',
-		'--with-bz2=/usr',
+		'--with-bz2=/usr/local/opt/bzip2',
 		'--enable-zip',
 		'--enable-pcntl',
 		'--enable-shmop',
@@ -193,8 +194,8 @@ sub install {
 	$self->shell({silent => 0}, "test -d $prefix/php.d || mkdir $prefix/php.d");
 	$self->shell({silent => 0}, "perl -p -i -e 's# -L\\S+c-client##' $prefix/bin/php-config");
 	$self->shell({silent => 0}, "curl -o $prefix/ssl/cert.pem https://curl.haxx.se/ca/cacert.pem");
-    $self->shell({silent => 0}, "echo 'openssl.cafile=/usr/local/php5/ssl/cert.pem' >> $prefix/php.d/40-openssl.ini");
-    $self->shell({silent => 0}, "echo 'curl.cainfo=/usr/local/php5/ssl/cert.pem' >> $prefix/php.d/40-curl.ini");
+    $self->shell({silent => 0}, "echo 'openssl.cafile=/usr/local/php7.3.8/ssl/cert.pem' >> $prefix/php.d/40-openssl.ini");
+    $self->shell({silent => 0}, "echo 'curl.cainfo=/usr/local/php7.3.8/ssl/cert.pem' >> $prefix/php.d/40-curl.ini");
 
 	$self->create_dso_ini_files();
 

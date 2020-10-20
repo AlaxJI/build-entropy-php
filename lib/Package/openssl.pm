@@ -27,7 +27,7 @@ sub subpath_for_check {
 
 sub build_configure {
 	my ($self) = shift;
-    $self->shell('./Configure darwin64-x86_64-cc --prefix=/usr/local/php5/');
+    $self->shell('./Configure darwin64-x86_64-cc --prefix=/usr/local/php7.3.8/');
     $self->shell('make depend');
 }
 

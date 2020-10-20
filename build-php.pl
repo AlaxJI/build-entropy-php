@@ -19,7 +19,7 @@ use Package::memcached;
 #use Package::memcache;
 use Package::xhprof;
 use Package::twig;
-use Package::APC;
+use Package::apc;
 use Package::solr;
 use Package::oauth;
 use Package::xslcache;
@@ -47,7 +47,7 @@ check_ltdl();
 my $config = Config->new(
 	cpus                 => 2,
 	basedir              => $basedir,
-	prefix               => '/usr/local/php5',
+	prefix               => '/usr/local/php7.3.8',
 	phpsrcdir            => undef,
 	orahome              => "$basedir/install",
 	mysql_install_prefix => undef,
@@ -57,7 +57,7 @@ my $config = Config->new(
 			suffix       => '',
 		},
 		apache2          => {
-			apxs_option  => '--with-apxs2=/usr/sbin/apxs',
+			apxs_option  => '--with-apxs2=/usr/local/Cellar/httpd/2.4.46/bin/apxs',
 			suffix       => '-apache2',
 		},
 	},

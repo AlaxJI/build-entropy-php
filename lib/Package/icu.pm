@@ -8,7 +8,7 @@ use base qw(Package);
 our $VERSION = '58.1';
 
 sub base_url {
-	return "http://download.icu-project.org/files/icu4c/" . $VERSION;
+	return "https://ftp.osuosl.org/pub/blfs/conglomeration/icu";
 }
 
 sub packagename {

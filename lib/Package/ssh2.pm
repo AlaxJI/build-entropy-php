@@ -30,7 +30,7 @@ sub configure_flags {
 		$self->SUPER::configure_flags(@_),
 		'--enable-' . lc($self->{PACKAGE_NAME}),
 		'--with-php-config=' . $self->install_prefix() . '/bin/php-config',
-        '--with-ssh2=/usr/local/php5'
+        '--with-ssh2=/usr/local/php7.3.8'
 	);
 }
 
